@@ -1,9 +1,9 @@
 const { Console } = require("@woowacourse/mission-utils");
 
-class UI {
-  static print(message) {
+const OutputView = {
+  printResult(message) {
     Console.print(message);
-  }
-}
+  },
+};
 
-module.exports = UI;
+module.exports = OutputView;

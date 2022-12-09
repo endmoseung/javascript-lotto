@@ -33,7 +33,6 @@ class Lotto {
 
   getResults = () => {
     const winningBoard = { ...LOTTO_DETAILS.WINNING_BOARD };
-    const profit = this.getProfit(winningBoard);
     this.userLottoArray.forEach((lotto) => {
       const intersectionLottoAndUser = lotto.reduce((acc, number) => {
         if (this.#numbers.includes(number)) acc += 1;
@@ -52,6 +51,7 @@ class Lotto {
 
       winningBoard[this.checkWinning(intersectionLottoAndUser)] += 1;
     });
+    const profit = this.getProfit(winningBoard);
     return { winningBoard, profit };
   };
 
